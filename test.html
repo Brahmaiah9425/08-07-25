@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Even Numbers Highlighter</title>
+</head>
+<body>
+  <h2>Even Numbers</h2>
+  <ul id="numberList"></ul>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let numbers = [1,2,3,4,5,6,7,8,9,10];
+      function isEven(num) {
+        return num % 2 === 0;
+      }
+      let listElement = document.getElementById("numberList");
+      for (let i = 0; i < numbers.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = numbers[i];
+        if (isEven(numbers[i])) {
+          li.style.color = "green";
+        }
+        listElement.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>
